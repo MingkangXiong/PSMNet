@@ -38,7 +38,7 @@ args = parser.parse_args()
 args.cuda = not args.no_cuda and torch.cuda.is_available()
 
 # set gpu id used
-os.environ["CUDA_VISIBLE_DEVICES"] = "0,1"
+os.environ["CUDA_VISIBLE_DEVICES"] = "3"
 
 torch.manual_seed(args.seed)
 if args.cuda:

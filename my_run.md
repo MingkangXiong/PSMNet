@@ -1,0 +1,1 @@
+python submission.py --maxdisp 192 --model stackhourglass --KITTI 2015 --datapath /home/mkxiong/dataset/data_scene_flow/testing/ --loadmodel /home/mkxiong/PSMNet/pretrained_model_KITTI2015.tar

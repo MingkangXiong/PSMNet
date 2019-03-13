@@ -21,6 +21,8 @@ from models import *
 
 # 2012 data /media/jiaren/ImageNet/data_scene_flow_2012/testing/
 
+os.environ["CUDA_VISIBLE_DEVICES"] = "3"
+
 parser = argparse.ArgumentParser(description='PSMNet')
 parser.add_argument('--KITTI', default='2015',
                     help='KITTI version')
@@ -109,7 +111,9 @@ def main():
        top_pad   = 384-imgL_o.shape[0]
        left_pad  = 1248-imgL_o.shape[1]
        img = pred_disp[top_pad:,:-left_pad]
-       skimage.io.imsave(test_left_img[inx].split('/')[-1],(img*256).astype('uint16'))
+       if inx == 0:
+           skimage.io.imsave(test_left_img[inx].split('/')[-1],(img*256).astype('uint16'))
+       
 
 if __name__ == '__main__':
    main()
